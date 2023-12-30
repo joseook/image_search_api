@@ -28,8 +28,8 @@
   <body class="bg-gray-600 text-base tracking-normal">
     <main class="flex items-center justify-center ">
       <div class="text-center pt-6">
-        <h1 class="text-6xl font-bold mb-20 text-white">Image Search Here</h1>
-        <form id="searchForm" class="flex items-center justify-center gap-x-4">
+        <h1 class="xl:text-6xl md:text-4xl text-3xl lg:text-5xl font-bold mb-20 text-white">Image Search Here</h1>
+        <form id="searchForm" class="flex items-center justify-center gap-4 flex-col xl:flex-row lg:flex-row ">
           <input
             class="text-white rounded-sm p-2 active:bg-transparent"
             type="text"
@@ -37,25 +37,27 @@
             placeholder="Search..."
             required
           />
-          <button
-            id="btn-clear-input"
-            type="button"
-            class="px-4 py-2 bg-gray-500 text-white rounded-sm"
-          >
-            Clear <i class="ri-close-line"></i>
-          </button>
-          <button
-            id="btn-send-input"
-            type="submit"
-            class="px-4 py-2 bg-blue-500 text-white rounded-sm"
-          >
-            Search <i class="ri-file-search-line"></i>
-          </button>
+          <div class="xl:space-x-3 space-y-3 xl:space-y-0 lg:space-y-0">
+            <button
+              id="btn-clear-input"
+              type="button"
+              class="px-4 py-2 bg-gray-500 text-white rounded-sm"
+            >
+              Clear <i class="ri-close-line"></i>
+            </button>
+            <button
+              id="btn-send-input"
+              type="submit"
+              class="px-4 py-2 bg-blue-500 text-white rounded-sm"
+            >
+              Search <i class="ri-file-search-line"></i>
+            </button>
+          </div>
         </form>
 
         <div
           id="results-container"
-          class="container mx-auto grid lg:grid-cols-3 md:grid-cols-2 pt-8 gap-7 animate-fade-in"
+          class="container mx-auto grid xl:grid-cols-3 md:grid-cols-2 sm:auto-cols-auto pt-8 gap-7 animate-fade-in"
         >
           <!-- Resultados de pesquisa aparecerão aqui -->
         </div>

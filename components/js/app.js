@@ -1,4 +1,4 @@
-// app.js
+// ...
 
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('searchForm');
@@ -9,8 +9,20 @@ document.addEventListener('DOMContentLoaded', function () {
   const clearButton = document.getElementById('btn-clear-input');
 
   let currentPage = 1;
-  const itemsPerPage = 6;
+  let itemsPerPage = calculateItemsPerPage(); // Função para calcular itens por página
   let totalResults = 0;
+
+  // Função para calcular itens por página com base no tamanho da tela
+  function calculateItemsPerPage() {
+    return window.innerWidth < 768 ? 3 : 6;
+  }
+
+  // Atualiza a quantidade de itens por página quando a tela for redimensionada
+  window.addEventListener('resize', function () {
+    itemsPerPage = calculateItemsPerPage();
+    currentPage = 1; // Reinicia para a primeira página ao redimensionar
+    searchImages(input.value.trim());
+  });
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -50,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function searchImages(query) {
-    const apiKey = 'QINuqAaGNVoM_vCi4Hn5sTGmMxVe_B1drdPrSePLngo'; // Altere para a sua chave API do Unsplash
+    const apiKey = 'QINuqAaGNVoM_vCi4Hn5sTGmMxVe_B1drdPrSePLngo';
     const apiUrl = `https://api.unsplash.com/search/photos?page=${currentPage}&query=${query}&per_page=${itemsPerPage}&client_id=${apiKey}`;
 
     fetch(apiUrl)
