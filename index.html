@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API SEARCH</title>
+
+    <!-- Logo -->
+    <link
+      rel="shortcut icon"
+      href="./components/image/api_search.ico"
+      type="image/x-icon"
+    />
+
+    <!-- TAILWIND -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.css"
+      rel="stylesheet"
+    />
+
+    <!--REMIX ICONS-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-gray-600 text-base tracking-normal">
+    <main class="flex items-center justify-center ">
+      <div class="text-center pt-6">
+        <h1 class="text-6xl font-bold mb-20 text-white">Image Search Here</h1>
+        <form id="searchForm" class="flex items-center justify-center gap-x-4">
+          <input
+            class="text-white rounded-sm p-2 active:bg-transparent"
+            type="text"
+            id="search-input"
+            placeholder="Search..."
+            required
+          />
+          <button
+            id="btn-clear-input"
+            type="button"
+            class="px-4 py-2 bg-gray-500 text-white rounded-sm"
+          >
+            Clear <i class="ri-close-line"></i>
+          </button>
+          <button
+            id="btn-send-input"
+            type="submit"
+            class="px-4 py-2 bg-blue-500 text-white rounded-sm"
+          >
+            Search <i class="ri-file-search-line"></i>
+          </button>
+        </form>
+
+        <div
+          id="results-container"
+          class="container mx-auto grid lg:grid-cols-3 md:grid-cols-2 pt-8 gap-7 animate-fade-in"
+        >
+          <!-- Resultados de pesquisa aparecerão aqui -->
+        </div>
+
+        <div class="flex justify-start items-center gap-6 pt-5">
+          <button
+            id="prevButton"
+            class="px-4 py-2 bg-gray-500 text-white rounded-sm hidden"
+            disabled
+          >
+            Prev
+          </button>
+          <button
+            id="nextButton"
+            class="px-4 py-2 bg-gray-500 text-white rounded-sm hidden"
+            disabled
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script src="components/js/app.js"></script>
+  </body>
+</html>
