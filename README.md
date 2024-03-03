@@ -19,7 +19,7 @@ This project utilizes the Unsplash API to perform image searches. It provides a 
 
 1. Clone the repository to your local environment.
    ```bash
-   git clone https://github.com/your-username/image_search_api.git
+   git clone https://github.com/joseook/image_search_api.git
    ```
 
 2. Open the `index.html` file in your web browser.
